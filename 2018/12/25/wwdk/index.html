@@ -3,19 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>wwdk | W W D&#39;s blog</title>
+  <title>解决登陆后的链接直接可以复制使用的问题 | W W D&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Computers do not solve problems, they execute solutions">
+  <meta name="description" content="根据docume.referrer判断页面是跳转过来还是复制链接刷新1.docume.referre *docume.referre是获取上一访问页面URL地址，如果获取不到 那么证明这个地址不是从上个页面跳转过来的！* 2.判断123456var  uer=&amp;quot;https://888&amp;quot;  //  这是登陆跳转链接    if（document.referrer==url）&amp;#1">
+<meta name="keywords" content="登陆,链接">
 <meta property="og:type" content="article">
-<meta property="og:title" content="wwdk">
+<meta property="og:title" content="解决登陆后的链接直接可以复制使用的问题">
 <meta property="og:url" content="http://yoursite.com/2018/12/25/wwdk/index.html">
 <meta property="og:site_name" content="W W D&#39;s blog">
-<meta property="og:description" content="Computers do not solve problems, they execute solutions">
+<meta property="og:description" content="根据docume.referrer判断页面是跳转过来还是复制链接刷新1.docume.referre *docume.referre是获取上一访问页面URL地址，如果获取不到 那么证明这个地址不是从上个页面跳转过来的！* 2.判断123456var  uer=&amp;quot;https://888&amp;quot;  //  这是登陆跳转链接    if（document.referrer==url）&amp;#1">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-25T06:42:34.354Z">
+<meta property="og:updated_time" content="2018-12-25T07:08:19.512Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wwdk">
-<meta name="twitter:description" content="Computers do not solve problems, they execute solutions">
+<meta name="twitter:title" content="解决登陆后的链接直接可以复制使用的问题">
+<meta name="twitter:description" content="根据docume.referrer判断页面是跳转过来还是复制链接刷新1.docume.referre *docume.referre是获取上一访问页面URL地址，如果获取不到 那么证明这个地址不是从上个页面跳转过来的！* 2.判断123456var  uer=&amp;quot;https://888&amp;quot;  //  这是登陆跳转链接    if（document.referrer==url）&amp;#1">
   
     <link rel="alternative" href="/atom.xml" title="W W D&#39;s blog" type="application/atom+xml">
   
@@ -188,7 +189,7 @@
                                         
                                             <section class="switch-part switch-part2">
                                                 <div class="widget tagcloud" id="js-tagcloud">
-                                                    <a href="/my-wwd/tags/tag1/" style="font-size: 10px;">tag1</a> <a href="/my-wwd/tags/tag2/" style="font-size: 10px;">tag2</a>
+                                                    <a href="/my-wwd/tags/tag1/" style="font-size: 10px;">tag1</a> <a href="/my-wwd/tags/tag2/" style="font-size: 10px;">tag2</a> <a href="/my-wwd/tags/登陆/" style="font-size: 10px;">登陆</a> <a href="/my-wwd/tags/链接/" style="font-size: 10px;">链接</a>
                                                 </div>
                                             </section>
                                             
@@ -293,7 +294,7 @@
                 
   
     <h1 class="article-title" itemprop="name">
-      wwdk
+      解决登陆后的链接直接可以复制使用的问题
     </h1>
   
 
@@ -301,8 +302,16 @@
               
                 <div class="article-info article-info-post">
                   
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/my-wwd/categories/eww/">eww</a>
+    </div>
+
 
                     
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/my-wwd/tags/登陆/">登陆</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/my-wwd/tags/链接/">链接</a></li></ul>
+    </div>
+
                       <div class="clearfix"></div>
                 </div>
                 
@@ -313,7 +322,11 @@
                                                           
                                                               
                                                                 
-                                                                  
+                                                                  <h2 id="根据docume-referrer判断页面是跳转过来还是复制链接刷新"><a href="#根据docume-referrer判断页面是跳转过来还是复制链接刷新" class="headerlink" title="根据docume.referrer判断页面是跳转过来还是复制链接刷新"></a>根据docume.referrer判断页面是跳转过来还是复制链接刷新</h2><p><code>1.docume.referre</code></p>
+<p><code>*docume.referre是获取上一访问页面URL地址，如果获取不到 那么证明这个地址不是从上个页面跳转过来的！*</code></p>
+<h3 id="2-判断"><a href="#2-判断" class="headerlink" title="2.判断"></a>2.判断</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var  uer=&quot;https://888&quot;  //  这是登陆跳转链接</span><br><span class="line">    if（document.referrer==url）&#123;</span><br><span class="line">          console.log(这是登陆跳转过来的)</span><br><span class="line">  &#125; else&#123;</span><br><span class="line">    console.log(这是复制链接，刷新页面)</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>*可以根据自己需要进行改动，希望能帮助我们这些程序猿！！！</p>
+
                                                                     
                                                                       
                                                                         <div class="page-reward">
@@ -379,12 +392,12 @@
       
         
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/my-wwd/2018/12/25/wwdk/">wwdk</a></p>
+        <p><span>本文标题:</span><a href="/my-wwd/2018/12/25/wwdk/">解决登陆后的链接直接可以复制使用的问题</a></p>
         <p><span>文章作者:</span><a href="/my-wwd/" title="访问 w w d 的个人博客">w w d</a></p>
         <p><span>发布时间:</span>2018年12月25日 - 14时42分</p>
-        <p><span>最后更新:</span>2018年12月25日 - 14时42分</p>
+        <p><span>最后更新:</span>2018年12月25日 - 15时08分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/my-wwd/2018/12/25/wwdk/" title="wwdk">http://yoursite.com/2018/12/25/wwdk/</a>
+            <span>原始链接:</span><a class="post-url" href="/my-wwd/2018/12/25/wwdk/" title="解决登陆后的链接直接可以复制使用的问题">http://yoursite.com/2018/12/25/wwdk/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/12/25/wwdk/　　作者: w w d" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/my-wwd/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
